@@ -30,7 +30,16 @@ static NSString *const kGMUMyLocationKeyPath = @"myLocation";
 - (GMSMapView *)mapView
 {
   if (_mapView == nil) {
-    _mapView = [[GMSMapView alloc] initWithFrame:[self bounds]];
+    GMSMapViewOptions *options = [[GMSMapViewOptions alloc] init];
+    options.frame = self.bounds;
+    options.backgroundColor = UIColor.systemBackgroundColor;
+    
+    _mapView = [[GMSMapView alloc] initWithOptions:options];
+
+    // Follow the inherited trait collection (system setting or Ti.UI.overrideUserInterfaceStyle).
+    // This is the Maps SDK default from 10.0 (9.x defaulted to Light); set explicitly so it never depends on that default.
+    _mapView.overrideUserInterfaceStyle = UIUserInterfaceStyleUnspecified;
+
     _centerAnnotationOnTap = YES;
     [_mapView setMapType:kGMSTypeNormal];
     [_mapView setDelegate:self];

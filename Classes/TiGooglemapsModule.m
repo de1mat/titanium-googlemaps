@@ -39,9 +39,7 @@
 
 - (void)enableMetalRenderer:(id)unused
 {
-  TiThreadPerformOnMainThread(^{
-    [GMSServices setMetalRendererEnabled:YES];
-  }, NO);
+  NSLog(@"[WARN] Ti.GoogleMaps: enableMetalRenderer is deprecated and has no effect, as Metal is the default renderer for Google Maps.");
 }
 
 - (NSString *)openSourceLicenseInfo

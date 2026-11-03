@@ -1,0 +1,17 @@
+{
+	"dependencies": [
+		{
+			"remotePackageReference": "ios-maps-sdk",
+			"repositoryURL": "https://github.com/googlemaps/ios-maps-sdk",
+			"requirementKind": "upToNextMajorVersion",
+			"requirementMinimumVersion": "11.2.0",
+			"products": [
+				{
+					"productName": "GoogleMaps",
+					"frameworkName": "GoogleMaps",
+					"linkage": "host"
+				}
+			]
+		}
+	]
+}
